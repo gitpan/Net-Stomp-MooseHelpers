@@ -1,6 +1,6 @@
 package Net::Stomp::MooseHelpers::CanConnect;
 {
-  $Net::Stomp::MooseHelpers::CanConnect::VERSION = '1.3.1';
+  $Net::Stomp::MooseHelpers::CanConnect::VERSION = '1.4';
 }
 {
   $Net::Stomp::MooseHelpers::CanConnect::DIST = 'Net-Stomp-MooseHelpers';
@@ -132,7 +132,6 @@ sub connect {
 1;
 
 __END__
-
 =pod
 
 =encoding utf-8
@@ -143,7 +142,7 @@ Net::Stomp::MooseHelpers::CanConnect - role for classes that connect via Net::St
 
 =head1 VERSION
 
-version 1.3.1
+version 1.4
 
 =head1 SYNOPSIS
 
@@ -249,3 +248,4 @@ This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
 
 =cut
+

@@ -1,6 +1,6 @@
 package Net::Stomp::MooseHelpers::ReconnectOnFailure;
 {
-  $Net::Stomp::MooseHelpers::ReconnectOnFailure::VERSION = '1.3.1';
+  $Net::Stomp::MooseHelpers::ReconnectOnFailure::VERSION = '1.4';
 }
 {
   $Net::Stomp::MooseHelpers::ReconnectOnFailure::DIST = 'Net-Stomp-MooseHelpers';
@@ -70,7 +70,6 @@ sub reconnect_on_failure {
 1;
 
 __END__
-
 =pod
 
 =encoding utf-8
@@ -81,7 +80,7 @@ Net::Stomp::MooseHelpers::ReconnectOnFailure - provide a reconnect-on-failure wr
 
 =head1 VERSION
 
-version 1.3.1
+version 1.4
 
 =head1 SYNOPSIS
 
@@ -140,3 +139,4 @@ This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
 
 =cut
+
