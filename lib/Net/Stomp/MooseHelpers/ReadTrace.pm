@@ -1,6 +1,6 @@
 package Net::Stomp::MooseHelpers::ReadTrace;
 {
-  $Net::Stomp::MooseHelpers::ReadTrace::VERSION = '1.6';
+  $Net::Stomp::MooseHelpers::ReadTrace::VERSION = '1.7';
 }
 {
   $Net::Stomp::MooseHelpers::ReadTrace::DIST = 'Net-Stomp-MooseHelpers';
@@ -47,8 +47,11 @@ sub read_frame_from_fh {
         $headers{$key}=$value;
     }
 
-    local $/="\x00";
+    local $/=undef;
+
     my $body=<$fh>;
+
+    return unless $body =~ s{\x00$}{}; # 0 marks the end of the frame
 
     return Net::Stomp::Frame->new({
         command => $command,
@@ -102,7 +105,7 @@ sub clear_destination {
 
     my $dir = $self->trace_subdir_for_destination(@_);
 
-    $dir->rmtree;$dir->mkpath;
+    $dir->rmtree({keep_root=>1});$dir->mkpath;
 
     return;
 }
@@ -130,7 +133,7 @@ Net::Stomp::MooseHelpers::ReadTrace - class to read the output of L<Net::Stomp::
 
 =head1 VERSION
 
-version 1.6
+version 1.7
 
 =head1 SYNOPSIS
 
@@ -172,8 +175,9 @@ L<Net::Stomp::Frame> object parsed from it. If the filehandle contains
 more than one frame, reads the first one and leaves the read position
 just after it.
 
-If the file was not a dumped STOMP frame, this function may still
-return a frame, but the contents are probably going to be useless.
+If the file was not a dumped STOMP frame, this function will probably
+return nothing; if it looked enough like a STOMP frame, you'll get
+back whatever could be parsed.
 
 =head2 C<trace_subdir_for_destination>
 
