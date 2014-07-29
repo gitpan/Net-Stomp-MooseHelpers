@@ -1,5 +1,5 @@
 package Net::Stomp::MooseHelpers::CanConnect;
-$Net::Stomp::MooseHelpers::CanConnect::VERSION = '2.6';
+$Net::Stomp::MooseHelpers::CanConnect::VERSION = '2.7';
 {
   $Net::Stomp::MooseHelpers::CanConnect::DIST = 'Net-Stomp-MooseHelpers';
 }
@@ -137,7 +137,7 @@ Net::Stomp::MooseHelpers::CanConnect - role for classes that connect via Net::St
 
 =head1 VERSION
 
-version 2.6
+version 2.7
 
 =head1 SYNOPSIS
 

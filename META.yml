@@ -45,4 +45,4 @@ requires:
   overload: '0'
 resources:
   repository: git://github.com/dakkar/Net-Stomp-MooseHelpers.git
-version: '2.6'
+version: '2.7'
